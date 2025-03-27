@@ -87,7 +87,7 @@ a,b: (int) values to use in bezout's identity
 
 returns: (int) t
 """
-def extended_euclidean(a, b):
+def extended_euclidean(a: int, b: int):
     r0 = a
     r1 = b
 
