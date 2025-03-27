@@ -4,6 +4,8 @@ This is my RSA implementation. Check `rsa.py` for the implementation. The other 
 
 ## Extended Euclidean Algorithm videos
 
-These videos helped me understand the algorithm more: 
+These videos helped me understand the algorithm more:
+<br/>
 [Euclidean Algorithm (watch this one first)](https://youtu.be/Jwf6ncRmhPg)
+<br/>
 [Extended Euclidean Algorithm](https://youtu.be/IwRtISxAHY4)
