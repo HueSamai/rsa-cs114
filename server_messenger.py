@@ -10,7 +10,7 @@ client_public_key = None
 client_n = None
 
 server_private_key, server_public_key, server_n = rsa.generate_keys() 
-if server_public_key is None or server_n is None:
+if server_private_key is None or server_n is None:
     exit(0)
 
 print(f"Server keys: {server_private_key} {server_public_key} {server_n}")
@@ -26,11 +26,11 @@ def handle_keys(packet: Packet, _):
 
 @MessageHandler.register(packet_id.CLIENT_MESSAGE)
 def handle_message(packet: Packet, _):
-    print(packet.read_str())
+    print("Customer: " + packet.read_str())
 
 @MessageHandler.register(packet_id.CLIENT_ENCRYPTED_MESSAGE)
 def handle_encrypted_message(packet: Packet, _):
-    print(rsa.decrypt_string(packet.read(packet.read_int()), server_private_key, server_n))
+    print("Customer: " + rsa.decrypt_string(packet.read(packet.read_int()), server_private_key, server_n))
 
 server_thread = threading.Thread(target=Server.loop)
 server_thread.start()

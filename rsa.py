@@ -121,7 +121,7 @@ n: (int) modulus
 
 returns: (int) encrypted message
 """ 
-def encrypt(M, e, n):
+def encrypt(M: int, e: int, n: int):
     return powmod(M,e,n)
 
 """
@@ -133,7 +133,7 @@ n: (int) modulus
 
 returns: (int) decrypted message
 """
-def decrypt(C, d, n):
+def decrypt(C: int, d: int, n: int):
     return powmod(C,d,n)
 
 
